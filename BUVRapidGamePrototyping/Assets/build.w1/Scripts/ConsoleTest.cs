@@ -11,9 +11,9 @@ public class ConsoleTest : MonoBehaviour
     void Start()
     {
         //Debug.Log("Inside the Start function");
-        Debug.Log("Game has started. Reading ammo as " + ammo);
+        //Debug.Log("Game has started. Reading ammo as " + ammo);
         ammo = ammo - 1;
-        Debug.Log("Reading ammo as " + ammo);
+        //Debug.Log("Reading ammo as " + ammo);
     }
 
     // Update is called once per frame

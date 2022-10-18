@@ -320,6 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1038153892}
+  - component: {fileID: 1038153893}
   m_Layer: 0
   m_Name: _BulletFactory
   m_TagString: Untagged
@@ -342,6 +343,21 @@ Transform:
   m_Father: {fileID: 146373548}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1038153893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038153891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cf0710f005fc114c913ff1473e09dac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4867535854761861546, guid: d7c3221e8087427468d30023c109ac5c, type: 3}
+  bulletForce: 1000
+  gunShot: {fileID: 8300000, guid: 561f157037522a54a9941704ddc6f4df, type: 3}
 --- !u!1001 &1525928999
 PrefabInstance:
   m_ObjectHideFlags: 0

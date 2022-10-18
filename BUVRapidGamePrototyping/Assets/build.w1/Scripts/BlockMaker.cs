@@ -33,7 +33,7 @@ public class BlockMaker : MonoBehaviour
                 //add blocks to the 'blockList' list
                 blockList.Add(lastestBlock);
                 //Debug.Log("Adding new block to the list. Reading element " + i + " as " + blockList[i]);
-                yield return new WaitForSeconds(0.15f);
+                yield return new WaitForSeconds(0.1f);
             }
         }
     }
