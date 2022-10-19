@@ -9,13 +9,12 @@ public class BulletMaker : MonoBehaviour
     public int bulletForce;
     public AudioClip gunShot;
     public AudioClip reload;
-    public AudioSource soundSource;
     bool canFire = true;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        soundSource.clip = reload;
+        
     }
 
     // Update is called once per frame
@@ -32,12 +31,15 @@ public class BulletMaker : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.R))
         {
-            AudioSource.PlayClipAtPoint(reload, this.transform.position);
-            if (soundSource.isPlaying)
-            {
-                Debug.Log("Reloading...");
-            }
+            StartCoroutine(ammoReload());
         }
+    }
+
+    IEnumerator ammoReload()
+    {
+        AudioSource.PlayClipAtPoint(reload, this.transform.position);
+        bool canFire = false;
+        yield return new WaitForSeconds(2f);
     }
 }
 
