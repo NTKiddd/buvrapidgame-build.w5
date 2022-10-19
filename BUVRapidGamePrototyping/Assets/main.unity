@@ -358,6 +358,8 @@ MonoBehaviour:
   bullet: {fileID: 4867535854761861546, guid: d7c3221e8087427468d30023c109ac5c, type: 3}
   bulletForce: 1000
   gunShot: {fileID: 8300000, guid: 561f157037522a54a9941704ddc6f4df, type: 3}
+  reload: {fileID: 8300000, guid: 16a4ac4730f184b469237a48c3c3fd11, type: 3}
+  soundSource: {fileID: 1753290338}
 --- !u!1001 &1525928999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -512,6 +514,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1753290338 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+  m_PrefabInstance: {fileID: 1525928999}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2608153443097018389
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class ConsoleTest : MonoBehaviour
     {
         //Debug.Log("Inside the Start function");
         //Debug.Log("Game has started. Reading ammo as " + ammo);
-        ammo = ammo - 1;
+        ammo = 5;
         //Debug.Log("Reading ammo as " + ammo);
     }
 
@@ -23,15 +23,26 @@ public class ConsoleTest : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("LMB clicked");
-            if(ammo>1)
+            if(ammo > 2)
             {
                 ammo = ammo - 1;
                 Debug.Log("You have " + ammo + " bullets remaining");
             }
-            else if (ammo<1)
+            else if (ammo == 2)
             {
-                Debug.Log("You are out of ammo. Reload");
+                ammo = ammo - 1;
+                Debug.Log("You have 1 bullet remaining");
             }
+            else
+            {
+                ammo = 0;
+                Debug.Log("You are out of ammo. Press R to reload");
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ammo = 5;
+            Debug.Log("Reloaded. You have " + ammo + " bullets remaining");
         }
     }
 }
