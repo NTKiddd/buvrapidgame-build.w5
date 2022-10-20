@@ -231,7 +231,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 953185744}
-  - component: {fileID: 953185743}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -239,18 +238,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &953185743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953185742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 991fb497bd7739f469da626790ec2b97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &953185744
 Transform:
   m_ObjectHideFlags: 0
@@ -359,7 +346,7 @@ MonoBehaviour:
   bulletForce: 1000
   gunShot: {fileID: 8300000, guid: 561f157037522a54a9941704ddc6f4df, type: 3}
   reload: {fileID: 8300000, guid: 16a4ac4730f184b469237a48c3c3fd11, type: 3}
-  soundSource: {fileID: 1753290338}
+  emptyGun: {fileID: 8300000, guid: ae90c923575429d4cb1604d498a88097, type: 3}
 --- !u!1001 &1525928999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -415,6 +402,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_FootstepSounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_FootstepSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
 --- !u!1 &1744998962
@@ -514,11 +513,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1753290338 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-  m_PrefabInstance: {fileID: 1525928999}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2608153443097018389
 PrefabInstance:
   m_ObjectHideFlags: 0
