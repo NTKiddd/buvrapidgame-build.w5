@@ -9,37 +9,71 @@ public class BulletMaker : MonoBehaviour
     public int bulletForce;
     public AudioClip gunShot;
     public AudioClip reload;
+    public AudioClip emptyGun;
     bool canFire = true;
+    private int ammo = 5;
 
-    // Start is called before the first frame update
+    void shootingBullet()
+    {
+        Debug.Log("LMB clicked");
+        Rigidbody bulletShot = Instantiate(bullet, this.transform.position, this.transform.rotation);
+        bulletShot.AddRelativeForce(Vector3.forward * bulletForce);
+        Destroy(bulletShot.gameObject, 5);
+        AudioSource.PlayClipAtPoint(gunShot, this.transform.position);
+    }
+
     void Start()
     {
-        
+        ammo = 5;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
-        {
-            //Debug.Log("left click detected");
-            Rigidbody bulletShot = Instantiate(bullet, this.transform.position, this.transform.rotation);
-            bulletShot.AddRelativeForce(Vector3.forward * bulletForce);
-            Destroy(bulletShot.gameObject, 5);
-            AudioSource.PlayClipAtPoint(gunShot, this.transform.position);
-        }
-        
+            if (canFire)
+            {
+                shootingBullet();
+
+                if(ammo > 2)
+                {
+                    ammo = ammo - 1;
+                    Debug.Log("You have " + ammo + " bullets remaining");
+                }
+                else if (ammo == 2)
+                {
+                    ammo = ammo - 1;
+                    Debug.Log("You have 1 bullet remaining");
+                }
+                else
+                {
+                    ammo = 0;
+                    Debug.Log("You are out of ammo. Press R to reload");
+                    canFire = false;
+                }
+            }
+            else
+            {
+                AudioSource.PlayClipAtPoint(emptyGun, this.transform.position);
+                Debug.Log("You are out of ammo. Press R to reload");
+            }
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             StartCoroutine(ammoReload());
         }
+
     }
 
     IEnumerator ammoReload()
     {
+        Debug.Log("Reloading...");
         AudioSource.PlayClipAtPoint(reload, this.transform.position);
-        bool canFire = false;
-        yield return new WaitForSeconds(2f);
+        canFire = false;
+        yield return new WaitForSeconds(3.3f);
+        canFire = true;
+        ammo = 5;
+        Debug.Log("Reloaded. You have " + ammo + " bullets remaining");
     }
 }
 
