@@ -4,23 +4,30 @@ using UnityEngine;
 
 public class BlockBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
-    void OnCollisionEnter (Collision ObjectCollidedWith)
+    void OnCollisionEnter (Collision col)
     {
-        if (ObjectCollidedWith.collider.tag == "ammo")
-        {
-            Debug.Log("block detecting collision by " + ObjectCollidedWith.collider.tag);
-        }
+        if (col.gameObject.tag == "ammo")
+            Destroy(col.gameObject);
+            
+            if (this.gameObject.tag == "Untagged")
+            {
+                this.gameObject.GetComponent<Renderer> ().material.color = Color.red;
+                this.gameObject.tag = "redBlock";
+            }
+            else if (this.gameObject.tag == "redBlock")
+            {
+                Destroy(this.gameObject);
+            }
     }
 }

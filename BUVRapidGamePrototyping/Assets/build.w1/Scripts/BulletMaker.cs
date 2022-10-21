@@ -22,12 +22,31 @@ public class BulletMaker : MonoBehaviour
         AudioSource.PlayClipAtPoint(gunShot, this.transform.position);
     }
 
+    void OnCollisionEnter (Collision ObjectCollidedWith)
+    {
+        if (ObjectCollidedWith.collider.tag == "wall")
+        {
+            Rigidbody bulletHit = bullet;
+            Destroy(bulletHit.gameObject);
+        }
+    }
+
+    IEnumerator ammoReload()
+    {
+        Debug.Log("Reloading...");
+        AudioSource.PlayClipAtPoint(reload, this.transform.position);
+        canFire = false;
+        yield return new WaitForSeconds(3.3f);
+        canFire = true;
+        ammo = 5;
+        Debug.Log("Reloaded. You have " + ammo + " bullets remaining");
+    }
+
     void Start()
     {
         ammo = 5;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -62,18 +81,6 @@ public class BulletMaker : MonoBehaviour
         {
             StartCoroutine(ammoReload());
         }
-
-    }
-
-    IEnumerator ammoReload()
-    {
-        Debug.Log("Reloading...");
-        AudioSource.PlayClipAtPoint(reload, this.transform.position);
-        canFire = false;
-        yield return new WaitForSeconds(3.3f);
-        canFire = true;
-        ammo = 5;
-        Debug.Log("Reloaded. You have " + ammo + " bullets remaining");
     }
 }
 
