@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ammo
   - redBlock
+  - yellowBlock
+  - greenBlock
   layers:
   - Default
   - TransparentFX

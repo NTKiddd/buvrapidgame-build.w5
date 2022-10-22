@@ -127,3 +127,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9633d676303164941a9fd3da0ccd8d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyedSmoke: {fileID: 100000, guid: 5a97962f7d5ba4df0823334b52c7c02c, type: 3}
+  blockDestruction: {fileID: 8300000, guid: 8ddc87e6ce434134db8dcf7bce9e218a, type: 3}

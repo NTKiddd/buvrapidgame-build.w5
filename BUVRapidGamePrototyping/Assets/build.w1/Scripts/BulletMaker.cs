@@ -36,7 +36,7 @@ public class BulletMaker : MonoBehaviour
         Debug.Log("Reloading...");
         AudioSource.PlayClipAtPoint(reload, this.transform.position);
         canFire = false;
-        yield return new WaitForSeconds(3.3f);
+        yield return new WaitForSeconds(2.6f);
         canFire = true;
         ammo = 5;
         Debug.Log("Reloaded. You have " + ammo + " bullets remaining");

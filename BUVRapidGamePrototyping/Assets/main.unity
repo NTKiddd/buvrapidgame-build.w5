@@ -345,7 +345,7 @@ MonoBehaviour:
   bullet: {fileID: 4867535854761861546, guid: d7c3221e8087427468d30023c109ac5c, type: 3}
   bulletForce: 1000
   gunShot: {fileID: 8300000, guid: 561f157037522a54a9941704ddc6f4df, type: 3}
-  reload: {fileID: 8300000, guid: 16a4ac4730f184b469237a48c3c3fd11, type: 3}
+  reload: {fileID: 8300000, guid: df1f89d610952d941bc71a0f90776a0b, type: 3}
   emptyGun: {fileID: 8300000, guid: ae90c923575429d4cb1604d498a88097, type: 3}
 --- !u!1001 &1525928999
 PrefabInstance:
