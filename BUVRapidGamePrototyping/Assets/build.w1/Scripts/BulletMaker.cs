@@ -15,7 +15,7 @@ public class BulletMaker : MonoBehaviour
 
     void shootingBullet()
     {
-        Debug.Log("LMB clicked");
+        //Debug.Log("LMB clicked");
         Rigidbody bulletShot = Instantiate(bullet, this.transform.position, this.transform.rotation);
         bulletShot.AddRelativeForce(Vector3.forward * bulletForce);
         Destroy(bulletShot.gameObject, 5);
