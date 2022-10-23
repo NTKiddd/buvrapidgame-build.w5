@@ -8,7 +8,7 @@ public class TimeDisplay : MonoBehaviour
     private GameObject tDisplay;
     private Timer timerScript;
     public Text timerText;
-
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -7,7 +7,7 @@ public class BlockMaker : MonoBehaviour
     public GameObject block;
     private int blockWidth = 2;
     private int blockHeight = 1;
-    List<GameObject> blockList = new List<GameObject>();
+    public List<GameObject> blockList = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class BlockMaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     IEnumerator BuildWall()
@@ -32,7 +32,6 @@ public class BlockMaker : MonoBehaviour
 
                 //add blocks to the 'blockList' list
                 blockList.Add(lastestBlock);
-                //Debug.Log("Adding new block to the list. Reading element " + i + " as " + blockList[i]);
                 yield return new WaitForSeconds(0.1f);
             }
         }
