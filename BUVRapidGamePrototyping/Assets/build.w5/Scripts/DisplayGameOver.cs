@@ -9,6 +9,7 @@ public class DisplayGameOver : MonoBehaviour
     public GameObject crosshairDisplay;
     private Timer timerScript;
     public Text gameOverText;
+    private GameObject fpsCamera;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class DisplayGameOver : MonoBehaviour
         gameOverDisplay = GameObject.Find("_TimerManager");
         timerScript = gameOverDisplay.GetComponent<Timer>();
         crosshairDisplay = GameObject.Find("crosshairUI");
+        fpsCamera = GameObject.Find("FirstPersonCharacter");
         Color transparent = new Color(0f, 0f, 0f, 0f);
         gameOverText.color = transparent;
     }
@@ -28,6 +30,7 @@ public class DisplayGameOver : MonoBehaviour
             gameOverText.text = "Game Over";
             gameOverText.color = Color.red;
             crosshairDisplay.GetComponent<RawImage> ().enabled=false;
+            Time.timeScale = 0f; 
         }
     }
 }

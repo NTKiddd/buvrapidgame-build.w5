@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    public int timerClock = 10;
+    public int timerClock = 60;
 
     IEnumerator timerCountdown()
     {

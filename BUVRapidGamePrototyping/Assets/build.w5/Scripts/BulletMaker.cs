@@ -53,15 +53,14 @@ public class BulletMaker : MonoBehaviour
             if (canFire)
             {
                 shootingBullet();
+                ammo = ammo - 1;
 
-                if(ammo > 2)
+                if(ammo > 1)
                 {
-                    ammo = ammo - 1;
                     Debug.Log("You have " + ammo + " bullets remaining");
                 }
-                else if (ammo == 2)
+                else if (ammo == 1)
                 {
-                    ammo = ammo - 1;
                     Debug.Log("You have 1 bullet remaining");
                 }
                 else
