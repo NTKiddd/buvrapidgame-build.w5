@@ -11,7 +11,7 @@ public class BulletMaker : MonoBehaviour
     public AudioClip reload;
     public AudioClip emptyGun;
     bool canFire = true;
-    private int ammo = 5;
+    private int ammo = 7;
 
     void shootingBullet()
     {
@@ -44,7 +44,7 @@ public class BulletMaker : MonoBehaviour
 
     void Start()
     {
-        ammo = 5;
+        ammo = 7;
     }
 
     void Update()

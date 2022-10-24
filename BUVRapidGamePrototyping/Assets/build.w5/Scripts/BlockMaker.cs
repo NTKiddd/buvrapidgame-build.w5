@@ -29,8 +29,6 @@ public class BlockMaker : MonoBehaviour
             for (int yAxis = 0; yAxis < 5; yAxis++)
             {
                 GameObject lastestBlock = Instantiate(block, new Vector3(this.transform.position.x + blockWidth * xAxis, this.transform.position.y + blockHeight * yAxis, this.transform.position.z), Quaternion.identity);
-
-                //add blocks to the 'blockList' list
                 blockList.Add(lastestBlock);
                 yield return new WaitForSeconds(0.1f);
             }
