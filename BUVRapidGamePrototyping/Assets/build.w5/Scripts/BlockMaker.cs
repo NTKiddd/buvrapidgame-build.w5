@@ -30,6 +30,7 @@ public class BlockMaker : MonoBehaviour
             {
                 GameObject lastestBlock = Instantiate(block, new Vector3(this.transform.position.x + blockWidth * xAxis, this.transform.position.y + blockHeight * yAxis, this.transform.position.z), Quaternion.identity);
                 blockList.Add(lastestBlock);
+                lastestBlock.gameObject.tag = "greyBlock";
                 yield return new WaitForSeconds(0.1f);
             }
         }

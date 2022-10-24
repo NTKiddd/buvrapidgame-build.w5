@@ -10,8 +10,22 @@ public class BlockBehaviour : MonoBehaviour
     private GameObject scoreManager;
     private GameObject blockFac;
     private BlockMaker blockmakerScript;
-    private int gBlock = 0;
 
+    void blockTagCheck()
+    {
+        GameObject[] gBlock;
+        gBlock = GameObject.FindGameObjectsWithTag("greenBlock");
+
+        if (gBlock.Length == blockTagCheck2())
+        {
+            Debug.Log("You win");
+        }
+    }
+
+    int blockTagCheck2()   
+    {
+        return blockmakerScript.blockList.Count;    
+    }
 
     void Start()
     {
@@ -23,7 +37,7 @@ public class BlockBehaviour : MonoBehaviour
 
     void Update()
     {
-
+    
     }
 
     void OnCollisionEnter (Collision col)
@@ -32,7 +46,7 @@ public class BlockBehaviour : MonoBehaviour
         {
             Destroy(col.gameObject);
                 
-            if (gameObject.tag == "Untagged")
+            if (gameObject.tag == "greyBlock")
             {
                 this.gameObject.GetComponent<Renderer> ().material.color = Color.red;
                 this.gameObject.tag = "redBlock";
@@ -49,6 +63,7 @@ public class BlockBehaviour : MonoBehaviour
                 this.gameObject.GetComponent<Renderer> ().material.color = Color.green;
                 this.gameObject.tag = "greenBlock";
                 scoreScript.UpdateScore(50);
+                blockTagCheck();
             }
             else if (gameObject.tag == "greenBlock")
             {
@@ -56,7 +71,7 @@ public class BlockBehaviour : MonoBehaviour
                 //Instantiate(destroyedSmoke, this.transform.position, this.transform.rotation);
                 AudioSource.PlayClipAtPoint(blockDestruction, this.transform.position);
                 scoreScript.currentScore = 0;
-                //blockmakerScript.blockList.Remove(this.gameObject); 
+                blockmakerScript.blockList.Remove(this.gameObject); 
             }
         }
     }
