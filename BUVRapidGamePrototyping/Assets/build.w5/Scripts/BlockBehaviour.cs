@@ -11,21 +11,7 @@ public class BlockBehaviour : MonoBehaviour
     private GameObject scoreManager;
     private GameObject blockFac;
     private BlockMaker blockmakerScript;
-    private GameObject timerText;
-
-    void blockTagCheck()
-    {
-        GameObject[] gBlock;
-        gBlock = GameObject.FindGameObjectsWithTag("greenBlock");
-        int totalBlock = blockmakerScript.blockList.Count;
-
-        if (gBlock.Length == totalBlock)
-        {
-            Debug.Log("You win");
-            SceneManager.LoadScene("winscene");
-            DontDestroyOnLoad(scoreManager);
-        }
-    }
+    private GameObject timeManager;
 
     void Start()
     {
@@ -33,7 +19,6 @@ public class BlockBehaviour : MonoBehaviour
         scoreScript = scoreManager.GetComponent<Score>();
         blockFac = GameObject.Find("_BlockFactory");
         blockmakerScript = blockFac.GetComponent<BlockMaker>();
-        timerText = GameObject.Find("TimerText");
     }
 
     void Update()
@@ -74,6 +59,21 @@ public class BlockBehaviour : MonoBehaviour
                 scoreScript.currentScore = 0;
                 blockmakerScript.blockList.Remove(this.gameObject); 
             }
+        }
+    }
+    
+    void blockTagCheck()
+    {
+        GameObject[] gBlock;
+        gBlock = GameObject.FindGameObjectsWithTag("greenBlock");
+        int totalBlock = blockmakerScript.blockList.Count;
+
+        if (gBlock.Length == totalBlock)
+        {
+            Debug.Log("You won");
+            SceneManager.LoadScene("winscene");
+            DontDestroyOnLoad(GameObject.Find("_UiManager"));   
+            GameObject.Find("TimerText").SetActive(false);
         }
     }
 }

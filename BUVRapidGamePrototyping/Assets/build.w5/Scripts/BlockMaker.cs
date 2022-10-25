@@ -26,7 +26,7 @@ public class BlockMaker : MonoBehaviour
         //Instantiate(block, this.transform.position, Quaternion.identity);
         for (int xAxis = 0; xAxis < 5; xAxis++)
         {
-            for (int yAxis = 0; yAxis < 5; yAxis++)
+            for (int yAxis = 0; yAxis < 1; yAxis++)
             {
                 GameObject lastestBlock = Instantiate(block, new Vector3(this.transform.position.x + blockWidth * xAxis, this.transform.position.y + blockHeight * yAxis, this.transform.position.z), Quaternion.identity);
                 blockList.Add(lastestBlock);
