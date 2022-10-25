@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BlockBehaviour : MonoBehaviour
 {
@@ -16,13 +17,14 @@ public class BlockBehaviour : MonoBehaviour
         GameObject[] gBlock;
         gBlock = GameObject.FindGameObjectsWithTag("greenBlock");
 
-        if (gBlock.Length == blockTagCheck2())
+        if (gBlock.Length == totalBlock())
         {
             Debug.Log("You win");
+            SceneManager.LoadScene("winscene");
         }
     }
 
-    int blockTagCheck2()   
+    int totalBlock()   
     {
         return blockmakerScript.blockList.Count;    
     }
