@@ -19,4 +19,10 @@ public class Restart : MonoBehaviour
         
     }
 
+    public void gameRestart()
+    {
+        //SceneManager.LoadScene("main");
+        Destroy(GameObject.Find("_UiManager"));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
 }
